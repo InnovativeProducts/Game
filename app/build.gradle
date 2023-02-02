@@ -1,21 +1,22 @@
-plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
-}
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
-    namespace 'com.example.game'
-    compileSdk 33
+    compileSdk 31
 
     defaultConfig {
         applicationId "com.example.gamesdk"
         minSdk 21
-        targetSdk 33
+        targetSdk 31
         versionCode 1
         versionName "1.0"
     }
 
     buildTypes {
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -31,14 +32,11 @@ android {
 }
 
 dependencies {
-
-    implementation 'androidx.core:core-ktx:1.9.0'
-    implementation 'androidx.appcompat:appcompat:1.6.0'
-    implementation 'com.google.android.material:material:1.8.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'bio.gamerplay.game:core:2.0.0-alpha02'
-    implementation 'bio.gamerplay.game:ui:2.0.0-alpha02'
-    implementation 'bio.gamerplay.game:cdn:2.0.0-alpha02'
-    implementation 'bio.gamerplay.game:ad-adapter-san:2.0.0-alpha02'
-    implementation 'jp.wasabeef:glide-transformations:4.3.0'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'bio.gamerplay.game:core:2.0.0-alpha04'
+    implementation 'bio.gamerplay.game:ui:2.0.0-alpha04'
+    implementation 'bio.gamerplay.game:cdn:2.0.0-alpha04'
+    implementation 'bio.gamerplay.game:ad-adapter-san:2.0.0-alpha04'
+//    implementation 'com.myadsget:san-sdk:3.13.0.8'
+    implementation 'com.myadsget:san-ex-sdk:3.13.0.9'
 }

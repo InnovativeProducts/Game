@@ -19,3 +19,9 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+-ignorewarnings
+-keepattributes Exceptions
+
+# adding this in to preserve line numbers so that the stack traces can be remapped
+-renamesourcefileattribute SourceFile
+-keepattributes SourceFile,LineNumberTable,InnerClasses
