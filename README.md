@@ -6,9 +6,7 @@ games in a short time to realize traffic monetization.
 
 # UI effects
 
-<img src="https://https://github.com/InnovativeProducts/Game/tree/master/images/image1.jpg?raw=true" width=200/>
-<img src="https://https://github.com/InnovativeProducts/Game/tree/master/images/image2.jpg?raw=true" width=200/>
-<img src="https://https://github.com/InnovativeProducts/Game/tree/master/images/image3.jpg?raw=true" width=200/>  
+<img src="https://github.com/InnovativeProducts/Game/blob/master/images/image1.jpg?raw=true" width=200/><img src="https://github.com/InnovativeProducts/Game/blob/master/images/image2.jpg?raw=true" width=200/><img src="https://github.com/InnovativeProducts/Game/blob/master/images/image3.jpg?raw=true" width=200/>
 
 # How to use
 
