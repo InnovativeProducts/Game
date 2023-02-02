@@ -4,6 +4,12 @@ Game Sdk is an sdk that integrates a large number of light games,
 which can help developers integrate the game capabilities of light
 games in a short time to realize traffic monetization.
 
+# UI effects
+
+<img src="https://https://github.com/InnovativeProducts/Game/tree/master/images/image1.jpg?raw=true" width=200/>
+<img src="https://https://github.com/InnovativeProducts/Game/tree/master/images/image2.jpg?raw=true" width=200/>
+<img src="https://https://github.com/InnovativeProducts/Game/tree/master/images/image3.jpg?raw=true" width=200/>  
+
 # How to use
 
 ## step1. add dependencies
@@ -22,12 +28,12 @@ repositories {
     google()
     mavenCentral()
 }
-
+ext.gameVersion = '2.0.0'
 dependencies {
-    implementation 'bio.gamerplay.game:core:2.0.0'
-    implementation 'bio.gamerplay.game:ui:2.0.0'
-    implementation 'bio.gamerplay.game:cdn:2.0.0'
-    implementation 'bio.gamerplay.game:ad-adapter-san:2.0.0'
+    implementation "bio.gamerplay.game:core:$gameVersion"
+    implementation "bio.gamerplay.game:ui:$gameVersion"
+    implementation "bio.gamerplay.game:cdn:$gameVersion"
+    implementation "bio.gamerplay.game:ad-adapter-san:$gameVersion"
     implementation 'com.myadsget:san-sdk:3.13.0.9'
 }
 ```  
@@ -110,6 +116,9 @@ EntertainmentSDK.startEListActivity(context)
 
 ### use fragment
 
+When you use fragment, you need to set the background color for the container in order to fit the
+style of the app. The setting in the demo is white
+
 ```kotlin
 class GameFragmentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -131,4 +140,47 @@ class GameFragmentActivity : AppCompatActivity() {
 The specific rules are already bundled into the aar which can be interpreted by R8 automatically
 
 # About San Sdk
+
 [San](https://github.com/san-sdk/sample/wiki/Integrate-the-SAN-SDK)
+
+# dark mode
+
+If your app needs to adapt to dark mode, then you can use:
+
+```groovy
+implementation "bio.gamerplay.game:night-theme-adapt:$gameVersion"
+```
+
+and set sdkNightThemeAdaptSystem when sdk init,true means to follow the system, otherwise not
+
+# custom ui
+
+The sdk now supports partial UI customization. Through the principle of resource merging during  
+compilation,the host can overwrite resources to achieve the purpose of customizing the UI.   
+The relevant key values of the resources are given below:    
+**drawable**
+
+| key                        | meaning                                                                                       |
+|----------------------------|-----------------------------------------------------------------------------------------------|
+| e_big_pic_card_play_button | The background of the play button in the large list card                                      |
+| e_error_retry_btn_bg       | Failed retry button background                                                                |
+| e_play_button_selector     | The background of the play button in other types of cards except for the large list card type |
+| e_no_net_btn_bg            | CONNECT button background in no-network state                                                 |
+
+**drawable-xxhdpi**
+
+| key          | meaning                                    |
+|--------------|--------------------------------------------|
+| e_score_icon | The play score icon in the large list card |
+
+**values-colors**
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--    play button text color-->
+    <color name="e_color_play_button">#247FFF</color>
+    <!--    Large image card play button text color-->
+    <color name="e_color_card_big_pic_play_button">#99FFFFFF</color>
+</resources>
+```

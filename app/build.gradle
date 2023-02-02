@@ -31,12 +31,14 @@ android {
     }
 }
 
+ext.gameVersion = '2.0.0-alpha04'
+
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.2'
-    implementation 'bio.gamerplay.game:core:2.0.0-alpha04'
-    implementation 'bio.gamerplay.game:ui:2.0.0-alpha04'
-    implementation 'bio.gamerplay.game:cdn:2.0.0-alpha04'
-    implementation 'bio.gamerplay.game:ad-adapter-san:2.0.0-alpha04'
+    implementation "bio.gamerplay.game:core:$gameVersion"
+    implementation "bio.gamerplay.game:ui:$gameVersion"
+    implementation "bio.gamerplay.game:cdn:$gameVersion"
+    implementation "bio.gamerplay.game:ad-adapter-san:$gameVersion"
 //    implementation 'com.myadsget:san-sdk:3.13.0.8'
     implementation 'com.myadsget:san-ex-sdk:3.13.0.9'
 }
