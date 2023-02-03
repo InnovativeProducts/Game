@@ -2,7 +2,6 @@ package com.example.game
 
 import android.app.Application
 import android.util.Log
-import com.san.api.SanAdSdk
 import com.st.entertainment.core.api.EntertainmentConfig
 import com.st.entertainment.core.api.EntertainmentSDK
 import com.st.entertainment.core.api.OriginOptions
@@ -19,12 +18,12 @@ class ExampleApplication : Application() {
             .isLocal(BuildConfig.DEBUG)
             .channel("demo_test")
             .cdnAdAbility(SanCdnAdAdapter.Builder(this)
-                .verticalNativeId("2318")
-                .verticalBannerId("2319")
-                .horizontalNativeId("2320")
-                .horizontalBannerId("2321")
-                .rewardVideoId("2322")
-                .autoInitSan(false)
+                .verticalNativeId("2623")
+                .verticalBannerId("2624")
+                .horizontalNativeId("2625")
+                .horizontalBannerId("2626")
+                .rewardVideoId("2627")
+                .autoInitSan(true)
                 .build())
             .build()
         EntertainmentSDK.init(this, config)
