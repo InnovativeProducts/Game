@@ -26,13 +26,13 @@ repositories {
     google()
     mavenCentral()
 }
-ext.gameVersion = '2.0.0'
+ext.gameVersion = '2.1.0'
 dependencies {
     implementation "bio.gamerplay.game:core:$gameVersion"
     implementation "bio.gamerplay.game:ui:$gameVersion"
     implementation "bio.gamerplay.game:cdn:$gameVersion"
     implementation "bio.gamerplay.game:ad-adapter-san:$gameVersion"
-    implementation 'com.myadsget:san-sdk:3.13.0.9'
+    implementation 'com.myadsget:san-sdk:3.13.9.11'
 }
 ```  
 
@@ -182,3 +182,14 @@ The relevant key values of the resources are given below:
     <color name="e_color_card_big_pic_play_button">#99FFFFFF</color>
 </resources>
 ```
+
+
+# Changes Log
+
+## 2.1.0
+
+* Performance optimization, solve the problem of sliding freeze, and improve the smoothness of sliding
+* Adapt to gp compliance adsence and admob advertisement use problem
+* optimize ui
+* fix bugs
+
